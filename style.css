@@ -1,0 +1,60 @@
+body {
+    /*margin-top: 120px;*/
+    padding-top:100px ;
+}
+
+section {
+    flex-grow: 1;
+}
+
+#chart-container {
+    width: 20%;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: row;
+}
+canvas {
+    /* Ensure that the canvas scales based on the size set in JS */
+    /*display: block;            !* Ensure that each canvas is a block element *!*/
+}
+#pieChartsContainer, #verticalChart{
+    display: flex;
+    flex-direction: row;/* Use Flexbox for layout */
+    flex-wrap: wrap;            /* Allow items to wrap to the next line */
+    justify-content: center;     /* Center the items */
+    gap: 10px;                  /* Space between pie charts */     /* Width of the container */ /* Space between pie charts */
+}
+.pie-chart {
+    width: 375px;              /* Set width of each pie chart */
+    height: 375px;             /* Set height of each pie chart */
+}.vert-chart {
+    width: 500px;              /* Set width of each pie chart */
+    height: 500px;             /* Set height of each pie chart */
+}
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+
+#groupedChart {
+    width: 800px;
+    max-width: 100%;
+}
+#verticalChart {
+    display: none;
+}
+.chart-container {
+    display: block;
+}
+#lineChart {
+    height: 500px;
+}
+@media (max-width: 1000px) {
+    .chart-container {
+        display: none;
+    }
+    #verticalChart {
+        display: block;
+    }
+}
