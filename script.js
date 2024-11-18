@@ -1,6 +1,6 @@
 Chart.register(ChartDataLabels);
 
-fetch('z03.xml') // Замініть на фактичний шлях до вашого XML файлу
+fetch('z03.xml')
     .then(response => response.text())
     .then(data => {
         const parser = new DOMParser();
@@ -44,7 +44,7 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
             'rgba(75, 192, 192, 0.6)',
             'rgba(153, 102, 255, 0.6)',
             'rgba(255, 159, 64, 0.6)',
-            'rgba(255, 0, 0, 0.6)' // Кольори для оцінок
+            'rgba(255, 0, 0, 0.6)'
         ];
 
         new Chart(document.getElementById('groupedChart'), {
@@ -61,13 +61,13 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Кількість учнів'
+                            text: 'Number of students'
                         }
                     },
                     x: {
                         title: {
                             display: true,
-                            text: 'Рік'
+                            text: 'Year'
                         }
                     }
                 },
@@ -78,7 +78,7 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
                     },
                     title: {
                         display: true,
-                        text: 'Розподіл оцінок по роках'
+                        text: 'Distribution of grades by year'
                     },
                     datalabels: {
                         offset: -5,
@@ -98,47 +98,47 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
 
             document.getElementById('verticalChart').appendChild(ctx);
             new Chart(ctx, {
-                type: 'bar', // Тип діаграми
+                type: 'bar',
                 data: {
-                    labels: gradeLabels, // Оцінки для осі Y
+                    labels: gradeLabels,
                     datasets: [{
-                        label: `Кількість учнів для ${year}`, // Назва набору даних
-                        data: gradeLabels.map(label => gradeData[label][index]), // Дані для осі X
+                        label: `Number of students ${year}`,
+                        data: gradeLabels.map(label => gradeData[label][index]),
                         backgroundColor: colors,
                         hoverOffset: 4
                     }]
                 },
                 options: {
-                    indexAxis: 'y', // Вертикальне відображення
-                    responsive: false, // Вимкнути адаптивність
+                    indexAxis: 'y',
+                    responsive: false,
                     plugins: {
                         legend: {
-                            display: false // Вимкнути легенду
+                            display: false
                         },
                         title: {
                             display: true,
-                            text: `Розподіл оцінок для ${year}` // Заголовок діаграми
+                            text: `${year} year grade distribution`
                         }
                     },
                     scales: {
                         y: {
                             title: {
                                 display: true,
-                                text: 'Оцінки' // Назва осі Y
+                                text: 'Grades'
                             },
-                            beginAtZero: true,// Почати з нуля
+                            beginAtZero: true,
                             ticks: {
-                                autoSkip: false, // Вимкнення автоматичного пропуску
-                                maxRotation: 0, // Установіть кут для кращого відображення
-                                minRotation: 0 // Установіть кут для кращого відображення
+                                autoSkip: false,
+                                maxRotation: 0,
+                                minRotation: 0
                             }
                         },
                         x: {
                             title: {
                                 display: true,
-                                text: 'Кількість учнів' // Назва осі X
+                                text: 'Number of students'
                             },
-                            beginAtZero: true // Почати з нуля
+                            beginAtZero: true
                         }
 
                     }
@@ -164,7 +164,7 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
                     }]
                 },
                 options: {
-                    responsive: false, // Змінює розміри кругової діаграми відповідно до контейнера
+                    responsive: false,
                     plugins: {
                         legend: {
                             display: true,
@@ -172,7 +172,7 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
                         },
                         title: {
                             display: true,
-                            text: `Розподіл оцінок для ${year}`
+                            text: `${year} year grade distribution`
                         }
                     }
                 }
@@ -181,18 +181,17 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
 
         const datasetsLine = gradeLabels.map((label, index) => ({
             label: label,
-            data: gradeData[label], // Кількість учнів для кожної оцінки
-            fill: false, // Не заповнювати область під лінією
-            borderColor: colors[index], // Використання кольору з масиву
+            data: gradeData[label],
+            fill: false,
+            borderColor: colors[index],
             tension: 0.1 // Для округлених ліній
         }));
 
-// Створення лінійної діаграми
         new Chart(document.getElementById('lineChart'), {
             type: 'line',
             data: {
-                labels: years, // Роки на осі X
-                datasets: datasetsLine // Набори даних для оцінок
+                labels: years,
+                datasets: datasetsLine
             },
             options: {
                 responsive: true,
@@ -202,13 +201,13 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Кількість учнів'
+                            text: 'Number of students'
                         }
                     },
                     x: {
                         title: {
                             display: true,
-                            text: 'Рік'
+                            text: 'Year'
                         }
                     }
                 },
@@ -219,7 +218,7 @@ fetch('z03.xml') // Замініть на фактичний шлях до ва�
                     },
                     title: {
                         display: true,
-                        text: 'Розподіл оцінок по роках'
+                        text: 'Distribution grades by year'
                     }
                 }
             }

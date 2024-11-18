@@ -1,0 +1,182 @@
+body {
+    background-color: #f0f4f8;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    padding-left: 10px;
+}
+
+h1 {
+    color: #2a3d66;
+    font-size: 28px;
+    margin-top: 90px;
+}
+
+#graph-container {
+    width: 400px;
+    height: 400px;/* Замість фіксованої ширини */
+    max-width: 100%; /* Максимальна ширина, щоб не виходити за межі екрану */
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+}
+
+#stopButton, #confirmButton {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2a3d66;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#stopButton:hover, #confirmButton:hover {
+    background-color: #1f2d52;
+}
+
+#stopButton:active {
+    background-color: #172141;
+    transform: scale(0.98);
+}
+
+#stopButton:focus, #confirmButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 61, 102, 0.3);
+}
+
+#amplitude-control {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#amplitude-control label {
+    font-size: 14px;
+    color: #F4F4F2;
+}
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+input[type="range"]::after {
+    content: attr(value);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #333;
+}
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    font-size: 14px;
+    color: #2a3d66;
+    border: 1px solid #d0d7e3;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #2a3d66;
+    outline: none;
+}
+
+#checkbox-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#checkbox-controls label {
+    font-size: 14px;
+    color: #2a3d66;
+}
+
+input[type="checkbox"] {
+    accent-color: #2a3d66;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+canvas {
+
+    border: 1px solid #d0d7e3;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.initial-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+/*@media screen and(max-width: 700px) {*/
+/*    #graph-container {*/
+/*       max-width: 40%;*/
+/*    }*/
+/*}*/
+/* Стилі для контейнера слайдера */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.tooltip {
+    position: absolute;
+    top: -35px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+

@@ -76,7 +76,7 @@ header .navbar ul li a {
     position: relative;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
     .hamburger button{
         display: block;
     }
@@ -120,7 +120,7 @@ header .navbar ul li a {
     .hamburger {
         display: block;
         top: 5%;
-        left: 95%;
+        left: 90%;
         width: 30px;
         height: 30px;
         transform: translateY(-50%);

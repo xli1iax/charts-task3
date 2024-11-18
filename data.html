@@ -12,9 +12,9 @@
     <a href="#" class="logo">Cviko3</a>
     <div class = "side-menu">
         <button class="hamburger" onclick="show()">
-            <div id="bar1" class="bar"></div>
-            <div id="bar2" class="bar"></div>
-            <div id="bar3" class="bar"></div>
+            <span id="bar1" class="bar"></span>
+            <span id="bar2" class="bar"></span>
+            <span id="bar3" class="bar"></span>
         </button>
         <nav class="navbar">
             <ul>
@@ -28,7 +28,65 @@
         </nav>
     </div>
 </header>
-</body>
+<h1>Data Plotting Interface</h1>
+<section>
+<div class="initial-settings" id="initialSettings">
+    <h2>Choose min and max for sinus and cosinus</h2>
+
+    <label for="minAmplitude1">Min Amplitude:</label>
+    <input type="number" id="minAmplitude1">
+    <label for="maxAmplitude1">Max Amplitude:</label>
+    <input type="number" id="maxAmplitude1">
+
+    <br>
+
+    <label for="minAmplitude2">Min Amplitude:</label>
+    <input type="number" id="minAmplitude2">
+    <label for="maxAmplitude2">Max Amplitude:</label>
+    <input type="number" id="maxAmplitude2">
+
+    <br>
+
+    <button id="confirmButton">Confirm</button>
+</div>
+</section>
+
+<section>
+<div class="controls" id="controlPanel" style="display: none;">
+    <label for="amplitudeSlider1">Amplitude sinus:</label>
+    <div class="slider-container">
+        <input type="range" id="amplitudeSlider1"  min="1" max="200">
+        <div id="tooltip1" class="tooltip"></div>
+    </div>
+    <input type="number" id="amplitudeInput1" value="50">
+
+    <br>
+
+    <label for="amplitudeSlider2">Amplitude cosinus:</label>
+    <div class="slider-container">
+        <input type="range" id="amplitudeSlider2"  min="1" max="200">
+        <div id="tooltip2" class="tooltip"></div>
+    </div>
+    <input type="number" id="amplitudeInput2" value="50">
+
+    <br>
+   <div id="checkbox-controls">
+    <label>
+        <input type="checkbox" id="showGraph1" checked> Show sinus
+    </label>
+    <label>
+        <input type="checkbox" id="showGraph2" checked> Show cosinus
+    </label>
+   </div>
+    <button id="stopButton">Stop</button>
+</div>
+<div id="graph-container">
+<canvas id="dataGraph" ></canvas>
+</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 <script src="scriptData.js"></script>
 <script src="scriptMenu.js"></script>
+</body>
 </html>

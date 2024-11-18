@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="webte1.fei.stuba.sk" id="2f71e295-1e14-4190-ba3f-9f008b99eb16" port="22" customName="task3" nameFormat="CUSTOM" username="xzhuravel" useOpenSSHConfig="true">
+        <option name="customName" value="task3" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
